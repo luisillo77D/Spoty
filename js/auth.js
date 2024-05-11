@@ -8,7 +8,7 @@ console.log(localStorage.getItem("code"));
 console.log(localStorage.getItem("access_token"));
 
 // URL del punto final de autorización de Spotify
-const AUTHORIZATION_URL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}&scope=user-read-playback-state%20user-modify-playback-state`;
+const AUTHORIZATION_URL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}&scope=user-read-playback-state%20user-modify-playback-state%20user-read-currently-playing%20user-read-recently-played%20user-top-read%20user-read-recently-played`;
 
 async function iniciarAutenticacionSpotify() {
   // redirect to the URL in new tab to start the auth process
@@ -56,11 +56,11 @@ const botonGenerar= document.getElementById("generate");
 //evento listener para el boton de generar, para que nos redirija a generos.html en caso de que ya tengamos el token si no iniciamos la autenticación
 botonGenerar.addEventListener("click",async ()=>{
   if(localStorage.getItem("access_token")!=undefined || localStorage.getItem("code")!=null){
-    window.location.href = "generos.html";
+    window.location.href = "topTracks.html";
     console.log("ya tienes el token");
   }else{
     await iniciarAutenticacionSpotify();
-    window.location.href = "generos.html";
+    window.location.href = "topTracks.html";
   }
 });
 

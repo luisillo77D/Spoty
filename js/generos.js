@@ -38,12 +38,12 @@ let generos = {
       selected: false
   },
   corridosTumbados: {
-      genres: "latin,latino",
+      genres: "latin",
       artistas: ["0elWFr7TW8piilVRYJUe4P", "0ys2OFYzWYB5hRDLCsBqxt"],
       selected: false
   },
   latinpop: {
-      genres: "latin,latino,pop",
+      genres: "latin,pop",
       artistas: ["1jtvmXiemNFkPO11NMdjfu", "4boI7bJtmB1L3b1cuL75Zr"],
       selected: false
   },
@@ -80,7 +80,6 @@ obtenerToken();
 //funcion para obtener la url de la imagen del artista
 async function obtenerImagenArtista(id) {
   try {
-    
     const respuesta = await fetch(`https://api.spotify.com/v1/artists/${id}`, {
     headers: {
       Authorization: "Bearer " +  ACCESS_TOKEN,
