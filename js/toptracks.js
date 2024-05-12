@@ -1,7 +1,7 @@
 const access_token = localStorage.getItem("access_token");
-const endpoint = "https://api.spotify.com/v1/me/top/tracks";
-const type = 'tracks';
-let selectedTimeFrame = ''; 
+const endpoint = "https://api.spotify.com/v1/me/top/";
+let type = 'tracks';
+let selectedTimeFrame = 'short_term'; 
 
 
 async function obtenerDatosUsuario() {
@@ -19,6 +19,7 @@ async function obtenerDatosUsuario() {
 
 async function mostrarDatosUsuario() {
     const usuario = await obtenerDatosUsuario();
+    console.log(usuario);
     const userNameElement = document.getElementById("user-name");
     const userImageElement = document.getElementById("user-image");
     if (usuario && userNameElement && userImageElement) {
@@ -29,6 +30,19 @@ async function mostrarDatosUsuario() {
 
 mostrarDatosUsuario();
 
+async function obtenerTopTracks(timeFrame) {
+    const url = `${endpoint}${type}?limit=10&time_range=${timeFrame}`;
+    try {
+        const response = await fetch(url, {
+            method: "GET",
+            headers: { Authorization: "Bearer " + access_token },
+        });
+        const data = await response.json();
+        return data.items;
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 async function mostrarTopTracks() {
     try {
@@ -56,10 +70,14 @@ function setTimeFrame(timeFrame) {
     actualizarTopTracks();
 }
 
+function setType(selectedType) {
+     type = selectedType;
+    actualizarTopTracks();
+}
 
 async function actualizarTopTracks() {
     const timeFrame = selectedTimeFrame; 
-    const url = `${endpoint}?limit=10&time_range=${timeFrame}`; 
+    const url = `${endpoint}${type}?limit=10&time_range=${timeFrame}`; 
 
     try {
         const response = await fetch(url, {
@@ -68,16 +86,25 @@ async function actualizarTopTracks() {
         });
         const data = await response.json();
         const topTracks = data.items;
-
+        console.log(data);
         const lista = document.getElementById("top-tracks");
         lista.innerHTML = '';
 
-        topTracks.forEach((track) => {
-            const li = document.createElement("li");
-            li.textContent = track.name;
-            li.classList.add('fade-in'); 
-            lista.appendChild(li);
-        });
+        if(type === 'tracks') {
+            topTracks.forEach((track) => {
+                const li = document.createElement("li");
+                li.textContent = track.name;
+                lista.appendChild(li);
+                //aniade mas informacion de la cancion aqui
+            });
+        } else {
+            topTracks.forEach((artist) => {
+                const li = document.createElement("li");
+                li.textContent = artist.name;
+                lista.appendChild(li);
+                //aniade mas informacion del artista aqui
+            });
+        }
     } catch (error) {
         console.log(error);
     }

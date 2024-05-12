@@ -31,9 +31,9 @@
             </div>
         </div>
         <h2>Métrica</h2>
-        <select id="top-select" style="width: 300px;">
-            <option value="artistas">Top Canciones</option>
-            <option value="canciones">Top Artistas</option>
+        <select id="top-select" style="width: 300px;" onchange="setType(this.value)">
+            <option value="tracks">Top Canciones</option>
+            <option value="artists">Top Artistas</option>
         </select>
         <h2>Periodo de tiempo</h2>
         <button onclick="setTimeFrame('short_term')">Último Mes</button>
