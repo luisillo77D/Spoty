@@ -25,14 +25,8 @@ botonAutenticacion.addEventListener("click", iniciarAutenticacionSpotify);
 const botonGenerar= document.getElementById("generate");
 
 //evento listener para el boton de generar, para que nos redirija a generos.html en caso de que ya tengamos el token si no iniciamos la autenticación
-botonGenerar.addEventListener("click",async ()=>{
-  if(localStorage.getItem("access_token")!='undefined' || localStorage.getItem("code")!==null){
-    await iniciarAutenticacionSpotify();
-    console.log("ya tienes el token");
-    window.location.href = "topTracks.html";
-  }else{
-    await iniciarAutenticacionSpotify();
-    window.location.href = "topTracks.html";
-  }
+botonGenerar.addEventListener("click", async () => {
+  await iniciarAutenticacionSpotify();
 });
+
 
