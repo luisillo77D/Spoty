@@ -2,8 +2,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-   
-    
+    background-color: #f0f0f0; 
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath fill="%23ffffff" d="M10 37.5c5 0 10-2.5 15-2.5s10 2.5 15 2.5 10-2.5 15-2.5 10 2.5 15 2.5 10-2.5 15-2.5 10 2.5 15 2.5v25c-5 0-10 2.5-15 2.5s-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5zm0-10c5 0 10-2.5 15-2.5s10 2.5 15 2.5 10-2.5 15-2.5 10 2.5 15 2.5 10-2.5 15-2.5v25c-5 0-10 2.5-15 2.5s-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5z"%3E%3C/path%3E%3C/svg%3E');     
+    background-size: 100%;
 }
 
 
@@ -13,13 +14,29 @@ body {
 }
 
 #top-select {
-    width: 300px;
+    width: 200px; 
     height: 40px; 
-    font-size: 18px; 
-    margin-right: 10px;
+    font-size: 16px;
+    padding: 5px 10px; 
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    background-color: #fff;
+    color: #333; 
 }
 
-/* Estilos para los botones */
+
+#top-select:hover {
+    border-color: #666; 
+}
+
+
+#top-select:focus {
+    outline: none; 
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+}
+
+
 button {
     padding: 8px 20px;
     font-size: 16px;
@@ -73,7 +90,8 @@ nav ul li {
 
 
 nav ul li.logout {
-    margin-left: auto;
+    margin-left: auto; /* Deja que el botón se alinee a la derecha */
+    margin-right: 10px; /* Agrega un poco de espacio entre el botón y el elemento anterior */
 }
 
 
@@ -118,6 +136,12 @@ nav ul li a:hover {
 
 .card-body li {
     margin-bottom: 10px;
+    font-size: 18px; 
+    color: #333; 
+}
+
+.card-body strong {
+    color: #4CAF50; 
 }
 
 @keyframes buttonClick {
@@ -141,3 +165,4 @@ nav ul li a:hover {
 .fade-in {
     animation: fadeIn 0.5s ease;
 }
+

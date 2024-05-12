@@ -24,16 +24,16 @@
         <h1>Modificar</h1>
         <div class="card">
             <div class="card-header">
-                <h2>Top Tracks</h2>
+                <h2 id="metric-title">Top Tracks</h2>
             </div>
             <div class="card-body" id="top-tracks">
                
             </div>
         </div>
         <h2>Métrica</h2>
-        <select id="top-select" style="width: 300px;">
-            <option value="artistas">Top Canciones</option>
-            <option value="canciones">Top Artistas</option>
+        <select id="top-select" onchange="setMetric(this.value)">
+            <option value="tracks">Top Tracks</option>
+            <option value="artists">Top Artistas</option>
         </select>
         <h2>Periodo de tiempo</h2>
         <button onclick="setTimeFrame('short_term')">Último Mes</button>

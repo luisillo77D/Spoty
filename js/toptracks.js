@@ -27,9 +27,6 @@ async function mostrarDatosUsuario() {
     }
 }
 
-mostrarDatosUsuario();
-
-
 async function mostrarTopTracks() {
     try {
         const topTracks = await obtenerTopTracks(selectedTimeFrame);
@@ -39,7 +36,7 @@ async function mostrarTopTracks() {
             lista.innerHTML = '';
             topTracks.forEach((track) => {
                 const li = document.createElement("li");
-                li.textContent = track.name;
+                li.innerHTML = `<strong>${track.name}</strong> - ${track.artists[0].name} (${msToMinSec(track.duration_ms)})`;
                 lista.appendChild(li);
             });
         } else {
@@ -50,14 +47,13 @@ async function mostrarTopTracks() {
     }
 }
 
-
 function setTimeFrame(timeFrame) {
     selectedTimeFrame = timeFrame;
     actualizarTopTracks();
 }
 
-
 async function actualizarTopTracks() {
+
     const timeFrame = selectedTimeFrame; 
     const url = `${endpoint}?limit=10&time_range=${timeFrame}`; 
 
@@ -74,7 +70,7 @@ async function actualizarTopTracks() {
 
         topTracks.forEach((track) => {
             const li = document.createElement("li");
-            li.textContent = track.name;
+            li.innerHTML = `<strong>${track.name}</strong> - ${track.artists[0].name} (${msToMinSec(track.duration_ms)})`;
             li.classList.add('fade-in'); 
             lista.appendChild(li);
         });
@@ -82,15 +78,21 @@ async function actualizarTopTracks() {
         console.log(error);
     }
 }
+
 function logout() {
     localStorage.removeItem("access_token");
     localStorage.removeItem("expires_in"); 
     window.location.href = "index.html"; 
 }
 
-
 document.getElementById("logout-btn").addEventListener("click", logout);
 
-
-
+mostrarDatosUsuario();
 mostrarTopTracks(); 
+
+
+function msToMinSec(ms) {
+    const minutes = Math.floor(ms / 60000);
+    const seconds = ((ms % 60000) / 1000).toFixed(0);
+    return `${minutes}:${(seconds < 10 ? '0' : '')}${seconds}`;
+}
