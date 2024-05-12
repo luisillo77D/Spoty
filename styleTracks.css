@@ -90,13 +90,13 @@ nav ul li {
 
 
 nav ul li.logout {
-    margin-left: auto; /* Deja que el botón se alinee a la derecha */
-    margin-right: 10px; /* Agrega un poco de espacio entre el botón y el elemento anterior */
+    margin-left: auto; 
+    margin-right: 10px; 
 }
 
 
 nav ul li.logout a:hover {
-    background-color: #FF5733; 
+    background-color: #ad452e; 
     color: rgb(59, 40, 40); 
 }
 
@@ -136,12 +136,31 @@ nav ul li a:hover {
 
 .card-body li {
     margin-bottom: 10px;
-    font-size: 18px; 
-    color: #333; 
+    font-size: 18px;
+    color: #333;
+    opacity: 0; 
+    animation: fadeIn 0.5s ease forwards; 
 }
 
 .card-body strong {
-    color: #4CAF50; 
+        color: #4CAF50;
+    }
+
+.card-body p {
+   
+        margin-bottom: 15px;
+    }
+
+.card-body a {
+ 
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.card-body a:hover {
+   
+    color: #2E8B57;
 }
 
 @keyframes buttonClick {
@@ -165,4 +184,26 @@ nav ul li a:hover {
 .fade-in {
     animation: fadeIn 0.5s ease;
 }
+.show-element {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease; 
+}
+.card-body li.artist {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-bottom: 10px;
+    font-size: 18px;
+    opacity: 0; 
+    animation: fadeIn 0.5s ease forwards; 
+    font-weight: bold;
+}
+.card-body li.artist::marker {
+    color: black; 
+}
 
+.card-body li.artist {
+    color: #4CAF50; 
+    font-weight: bold; 
+}
