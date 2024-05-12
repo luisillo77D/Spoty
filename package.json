@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.3"
+    "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "spotify-personal-auth": "^1.1.6"
   }
 }

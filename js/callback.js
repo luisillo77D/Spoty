@@ -24,7 +24,7 @@ const getToken = async (code) => {
       
       const body = await fetch(url, payload);
       const response = await body.json();
-      console.log(response);
+      console.log(response.access_token);
       localStorage.setItem("access_token", response.access_token);
     } catch (error) {
       console.error(error);
