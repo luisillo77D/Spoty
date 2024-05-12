@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   
+    
+}
+
+
+#controls {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#top-select {
+    width: 300px;
+    height: 40px; 
+    font-size: 18px; 
+    margin-right: 10px;
+}
+
+/* Estilos para los botones */
+button {
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+nav {
+    background: linear-gradient(to bottom, #4CAF50, #2E8B57);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.user-info {
+    display: flex;
+    align-items: center; 
+    margin-left: auto; 
+}
+
+#user-name {
+    margin-right: 10px; 
+    font-size: 16px;
+    color: white;
+}
+
+#user-image {
+    width: 40px;
+    height: 40px; 
+    border-radius: 50%;
+}
+
+nav ul li {
+    display: inline; 
+}
+
+
+nav ul li.logout {
+    margin-left: auto;
+}
+
+
+nav ul li.logout a:hover {
+    background-color: #FF5733; 
+    color: rgb(59, 40, 40); 
+}
+
+
+nav ul li a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 16px; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+
+nav ul li a:hover {
+    background-color: #45a049; 
+}
+.card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #4CAF50;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body li {
+    margin-bottom: 10px;
+}
+
+@keyframes buttonClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.button-click-animation {
+    animation: buttonClick 0.3s ease;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}

@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleTracks.css">
     <title>Document</title>
 </head>
 <body>
-    <div id="top-tracks">
-
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="user-info">
+                <span id="user-name"></span>
+                <img id="user-image" src="" alt="User Image">
+            </li>
+            <li class="logout"><a href="#" id="logout-btn">Log Out</a></li>
+        </ul>
+    </nav>
+    <div id="controls">
+        <h1>Modificar</h1>
+        <div class="card">
+            <div class="card-header">
+                <h2>Top Tracks</h2>
+            </div>
+            <div class="card-body" id="top-tracks">
+               
+            </div>
+        </div>
+        <h2>Métrica</h2>
+        <select id="top-select" style="width: 300px;">
+            <option value="artistas">Top Canciones</option>
+            <option value="canciones">Top Artistas</option>
+        </select>
+        <h2>Periodo de tiempo</h2>
+        <button onclick="setTimeFrame('short_term')">Último Mes</button>
+        <button onclick="setTimeFrame('medium_term')">Últimos 6 Meses</button>
+        <button onclick="setTimeFrame('long_term')">Último Año</button>
     </div>
     <script src="js/toptracks.js"></script>
 </body>
