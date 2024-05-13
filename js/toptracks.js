@@ -2,7 +2,9 @@ const access_token = localStorage.getItem("access_token");
 const endpoint = "https://api.spotify.com/v1/me/top/";
 let type = 'tracks';
 let selectedTimeFrame = 'short_term'; 
-
+let userID
+let playlistID
+let trackURIs = [];
 
 async function obtenerDatosUsuario() {
     try {
@@ -11,6 +13,7 @@ async function obtenerDatosUsuario() {
             headers: { Authorization: "Bearer " + access_token },
         });
         const datos = await respuesta.json();
+        userID = datos.id
         return datos;
     } catch (error) {
         console.log(error);
@@ -38,6 +41,9 @@ async function obtenerTopTracks(timeFrame) {
             headers: { Authorization: "Bearer " + access_token },
         });
         const data = await response.json();
+        trackURIs = data.items.map((item) => item.uri);
+        console.log(trackURIs);
+        console.log(JSON.stringify({ uris: trackURIs }));
         return data.items;
     } catch (error) {
         console.error(error);
@@ -136,3 +142,62 @@ function setType(selectedType) {
 
     actualizarTopTracks();
 }
+
+//funcion para crear playlist con los top tracks
+async function createPlaylist() {
+    const url = `https://api.spotify.com/v1/users/${userID}/playlists`;
+    const data = {
+        name: 'Top Tracks',
+        description: 'Top 10 tracks',
+        public: false,
+    };
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${access_token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        const playlist = await response.json();
+        return playlist.id;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+//funcion para agregar tracks a la playlist
+async function addTracksToPlaylist(trackURIs) {
+    playlistID = await createPlaylist();
+    const url = `https://api.spotify.com/v1/playlists/${playlistID}/tracks`;
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${access_token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ uris: trackURIs,
+                "position": 0
+             }),
+        });
+        console.log(JSON.stringify({ uris: trackURIs,
+            "position": 0
+         }))
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+document.getElementById('save-playlist').addEventListener('click', async () => {
+    try {
+        await addTracksToPlaylist(trackURIs);
+        alert('Playlist creada con éxito');
+    } catch (error) {
+        console.error(error);
+    }
+});
+

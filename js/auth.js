@@ -8,7 +8,7 @@ console.log(localStorage.getItem("code"));
 console.log(localStorage.getItem("access_token"));
 
 // URL del punto final de autorización de Spotify
-const AUTHORIZATION_URL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}&scope=user-read-playback-state%20user-modify-playback-state%20user-read-currently-playing%20user-read-recently-played%20user-top-read%20user-read-recently-played`;
+const AUTHORIZATION_URL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}&scope=user-read-playback-state%20user-modify-playback-state%20user-read-currently-playing%20user-read-recently-played%20user-top-read%20user-read-recently-played%20playlist-modify-public%20playlist-modify-private`;
 
 async function iniciarAutenticacionSpotify() {
   // redirect to the URL in new tab to start the auth process
