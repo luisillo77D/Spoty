@@ -132,8 +132,17 @@ nav ul li a:hover {
 
 .card-body {
     padding: 20px;
+    width: 45%;
 }
 
+.tracks-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.playlist-container {
+    width: 45%;
+}
 .card-body li {
     margin-bottom: 10px;
     font-size: 18px;

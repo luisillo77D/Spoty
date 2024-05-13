@@ -195,6 +195,7 @@ document.getElementById('save-playlist').addEventListener('click', async () => {
     if(type === 'tracks') {
         try {
             await addTracksToPlaylist(trackURIs);
+            await showPlaylist();
             alert('Playlist creada con éxito');
         } catch (error) {
             console.error(error);
@@ -203,4 +204,18 @@ document.getElementById('save-playlist').addEventListener('click', async () => {
         console.log('No se pueden agregar artistas a la playlist');
     }
 });
+
+//funcio para mostrar el iframe de la playlist creada
+async function showPlaylist() {
+    const playlistElement = document.getElementById('playlist-cont');
+    playlistElement.innerHTML = '';
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://open.spotify.com/embed/playlist/${playlistID}`;
+    iframe.width = '300';
+    iframe.height = '380';
+    iframe.frameborder = '0';
+    iframe.allowtransparency = 'true';
+    iframe.allow = 'encrypted-media';
+    playlistElement.appendChild(iframe);
+}
 
