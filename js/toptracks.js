@@ -42,8 +42,6 @@ async function obtenerTopTracks(timeFrame) {
         });
         const data = await response.json();
         trackURIs = data.items.map((item) => item.uri);
-        console.log(trackURIs);
-        console.log(JSON.stringify({ uris: trackURIs }));
         return data.items;
     } catch (error) {
         console.error(error);
@@ -91,6 +89,7 @@ async function actualizarTopTracks() {
         });
         const data = await response.json();
         const topTracks = data.items;
+        trackURIs = data.items.map((item) => item.uri);
         const lista = document.getElementById("top-tracks");
         lista.innerHTML = '';
 
@@ -193,11 +192,15 @@ async function addTracksToPlaylist(trackURIs) {
 }
 
 document.getElementById('save-playlist').addEventListener('click', async () => {
-    try {
-        await addTracksToPlaylist(trackURIs);
-        alert('Playlist creada con éxito');
-    } catch (error) {
-        console.error(error);
+    if(type === 'tracks') {
+        try {
+            await addTracksToPlaylist(trackURIs);
+            alert('Playlist creada con éxito');
+        } catch (error) {
+            console.error(error);
+        }
+    } else {
+        console.log('No se pueden agregar artistas a la playlist');
     }
 });
 
