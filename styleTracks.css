@@ -53,7 +53,7 @@ button:hover {
     background-color: #45a049;
 }
 nav {
-    background: linear-gradient(to bottom, #4CAF50, #2E8B57);
+    background-color: rgb(17 24 39 );
     padding: 10px 0;
 }
 
@@ -67,9 +67,9 @@ nav ul {
 }
 
 .user-info {
-    display: flex;
+   
     align-items: center; 
-    margin-left: auto; 
+   
 }
 
 #user-name {
@@ -96,7 +96,7 @@ nav ul li.logout {
 
 
 nav ul li.logout a:hover {
-    background-color: #ad452e; 
+    background-color: #45a049; 
     color: rgb(59, 40, 40); 
 }
 
@@ -114,34 +114,79 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #45a049; 
 }
+
+.nav-contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.modificar-contendor{
+    display: flex;
+    justify-content: center;
+
+
+
+}
 .card {
-    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+ 
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
 .card-header {
-    background-color: #4CAF50;
+    background-color: rgb(17 24 39 );
+
+
+
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: white;
     padding: 10px;
     text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .card-body {
+    background-color: rgb(17 24 39 );
     padding: 20px;
     width: 45%;
+    border-width: 4px;
+    border-color: #ffffff;
+    border-width: 1;
+    border-style: solid;
 }
 
 .tracks-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 7rem;
+    padding-right: 7rem;
 }
 
 .playlist-container {
-    width: 45%;
+ 
+}
+.metrica-contenedor{
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+   padding-left: 1rem;
+   padding-right: 1rem;
+
+}
+.metrica-contenedor-barra{
+    background-color: rgb(17 24 39 );
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: .5rem;
+  
 }
 .card-body li {
     margin-bottom: 10px;
@@ -216,3 +261,56 @@ nav ul li a:hover {
     color: #4CAF50; 
     font-weight: bold; 
 }
+.periodo-bonotes{
+    gap: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 20rem;
+
+
+
+
+    
+}
+.periodo-bonotes h3{
+    color: #fff;
+}
+.periodo-bonotes p{
+    color: rgb(214, 214, 214);
+}
+.padre-periododetiempo-contenedor{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.periododetiempo-contenedor{
+    background-color: rgb(17 24 39 );
+    padding: 1.5rem;
+    border-radius: .5rem;
+ 
+    border-width: 2px;
+ 
+}
+.periodo-botones-contenedor{
+    padding-right: 5rem;
+    background-color:  #4CAF50;
+    box-sizing: border-box;
+    border-radius: .5rem;
+    border-color: #9e9e9e;
+    border-width: 2px;
+    border-style: solid;
+    
+}
+.periododetiempo-contenedor{
+    color: white;
+}
+.periodo-boton{
+   background-color: rgb(17 24 39);
+}
+.botonguardar{
+    margin-top: 2rem;
+    background-color: rgb(17 24 39 );
+}.botonguardar:hover{
+background-color:#c7c7c7
+}
+
