@@ -1,7 +1,7 @@
 
 const CLIENT_ID = "5f49bb2bd6d24e96a3cbfdeffb9071f8";
 const CLIENT_SECRET = "b579f422e44f4b289ec5cecb40e1d208";
-const REDIRECT_URI = process.env.CALLBACK  ;
+const REDIRECT_URI = "https://spoty-eight.vercel.app/callback.html"  ;
 
   // Inicializa la autenticación de Spotify al hacer clic en el botón
 const getToken = async (code) => {
