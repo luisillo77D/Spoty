@@ -94,14 +94,17 @@ async function actualizarTopTracks() {
         lista.innerHTML = '';
 
         topTracks.forEach((item) => {
-            const li = document.createElement("li");
+            const iframe = document.createElement("iframe");
             if (type === 'tracks') {
-                li.innerHTML = `<strong>${item.name}</strong> - ${item.artists[0].name} (${msToMinSec(item.duration_ms)})`;
+                iframe.src=`https://open.spotify.com/embed/track/${item.id}`
+                iframe.width='600'
+                iframe.height='80'
+                iframe.allow="encrypted-media"
             } else {
                 li.textContent = item.name;
                 li.classList.add('artist'); 
             }
-            lista.appendChild(li);
+            lista.appendChild(iframe);
         });
     } catch (error) {
         console.log(error);
@@ -218,4 +221,5 @@ async function showPlaylist() {
     iframe.allow = 'encrypted-media';
     playlistElement.appendChild(iframe);
 }
+
 

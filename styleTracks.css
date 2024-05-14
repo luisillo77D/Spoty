@@ -2,8 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; 
-    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath fill="%23ffffff" d="M10 37.5c5 0 10-2.5 15-2.5s10 2.5 15 2.5 10-2.5 15-2.5 10 2.5 15 2.5 10-2.5 15-2.5 10 2.5 15 2.5v25c-5 0-10 2.5-15 2.5s-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5zm0-10c5 0 10-2.5 15-2.5s10 2.5 15 2.5 10-2.5 15-2.5 10 2.5 15 2.5 10-2.5 15-2.5v25c-5 0-10 2.5-15 2.5s-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5z"%3E%3C/path%3E%3C/svg%3E');     
+    background: linear-gradient(to bottom, #ffffff, #e9e9e9);
+    /* background-image: url(data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath fill="%23ffffff" d="M10 37.5c5 0 10-2.5 15-2.5s10 2.5 15 2.5 10-2.5 15-2.5 10 2.5 15 2.5 10-2.5 15-2.5 10 2.5 15 2.5v25c-5 0-10 2.5-15 2.5s-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5zm0-10c5 0 10-2.5 15-2.5s10 2.5 15 2.5 10-2.5 15-2.5 10 2.5 15 2.5 10-2.5 15-2.5v25c-5 0-10 2.5-15 2.5s-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5-10 2.5-15 2.5-10-2.5-15-2.5z"%3E%3C/path%3E%3C/svg%3E); */
     background-size: 100%;
 }
 
@@ -123,69 +123,68 @@ nav ul li a:hover {
     padding-bottom: 1rem;
 }
 .modificar-contendor{
+    padding-left: 7rem;
+}
+.contenedor{
     display: flex;
-    justify-content: center;
-
-
-
+    /* padding-top: 4rem; */
+    margin-top: 4rem;
+}
+.contenedor-modificar{
+    margin-left: 4rem;
+    
 }
 .card {
-    display: flex;
     flex-direction: column;
- 
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(20, 83, 45);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    padding-right: 16rem;
+    margin-left: 7rem;
+    margin-right: -10rem;
+    width: 50%;
 }
 
 .card-header {
-    background-color: rgb(17 24 39 );
-
-
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     color: white;
     padding: 10px;
-    text-align: center;
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
 .card-body {
-    background-color: rgb(17 24 39 );
-    padding: 20px;
-    width: 45%;
-    border-width: 4px;
-    border-color: #ffffff;
-    border-width: 1;
-    border-style: solid;
+   
+    
+ 
 }
 
 .tracks-container {
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-left: 7rem;
-    padding-right: 7rem;
+    padding-left: 4rem;
+
+    padding-right: 0rem;
 }
 
 .playlist-container {
  
 }
 .metrica-contenedor{
-   padding-top: 2rem;
-   padding-bottom: 2rem;
-   padding-left: 1rem;
-   padding-right: 1rem;
+    padding-top: 6rem;
+    padding-bottom: 0rem;
+ 
 
 }
 .metrica-contenedor-barra{
-    background-color: rgb(17 24 39 );
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-radius: .5rem;
+    border-radius: 0.5rem;
+    margin-top: -0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   
 }
 .card-body li {
@@ -265,13 +264,9 @@ nav ul li a:hover {
     gap: 1.5rem;
     display: flex;
     justify-content: space-between;
-    padding-left: 2rem;
-    padding-right: 20rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
-
-
-
-    
 }
 .periodo-bonotes h3{
     color: #fff;
@@ -284,21 +279,22 @@ nav ul li a:hover {
     padding-right: 1rem;
 }
 .periododetiempo-contenedor{
-    background-color: rgb(17 24 39 );
+    background-color: rgb(20, 83, 45);
     padding: 1.5rem;
-    border-radius: .5rem;
- 
+    border-radius: 1.5rem;
     border-width: 2px;
  
 }
 .periodo-botones-contenedor{
     padding-right: 5rem;
-    background-color:  #4CAF50;
+    background-color:  #000000;
     box-sizing: border-box;
-    border-radius: .5rem;
-    border-color: #9e9e9e;
+    border-radius: 1.5rem;
+    padding-left: 1.5rem;
     border-width: 2px;
-    border-style: solid;
+    padding-right: 0rem;
+
+   
     
 }
 .periododetiempo-contenedor{
@@ -310,7 +306,12 @@ nav ul li a:hover {
 .botonguardar{
     margin-top: 2rem;
     background-color: rgb(17 24 39 );
+    padding-left: 1rem;
+    margin-left: 43.2rem;   
 }.botonguardar:hover{
 background-color:#c7c7c7
 }
+.botonguardar:active{
+   transform: scale(0.95);
+    }
 
