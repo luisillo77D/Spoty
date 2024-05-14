@@ -124,7 +124,7 @@ nav ul li a:hover {
 }
 .modificar-contendor{
     padding-left: 7rem;
-    font-size: large;
+    background-color: rgb(20, 83, 45);
 }
 .contenedor{
     display: flex;
@@ -133,7 +133,7 @@ nav ul li a:hover {
 }
 .contenedor-modificar{
     margin-left: 4rem;
-    
+    background-color: rgb(20, 83, 45);
 }
 .card {
     flex-direction: column;
