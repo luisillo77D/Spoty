@@ -252,3 +252,14 @@
     text-decoration: none;
     color: #f7f7f7;
   }
+
+  .tops-container{
+    background-color: #1DB954;
+  }
+  #track-list{
+    background-color: #158a3e;
+  }
+
+  #new-releases{
+    background-color: #158a3e;
+  }
