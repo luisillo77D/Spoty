@@ -174,7 +174,7 @@ async function showPlaylist() {
   playlistElement.innerHTML = "";
   const iframe = document.createElement("iframe");
   iframe.src = `https://open.spotify.com/embed/playlist/${playlistID}`;
-  iframe.width = "90%";
+  iframe.width = "100%";
   iframe.height = "380";
   iframe.frameborder = "0";
   iframe.allowtransparency = "true";
