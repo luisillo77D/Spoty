@@ -27,7 +27,7 @@ async function mostrarDatosUsuario() {
   const userImageElement = document.getElementById("user-image");
   if (usuario && userNameElement && userImageElement) {
     userNameElement.textContent = usuario.display_name;
-    userImageElement.src = usuario.images[0].url;
+    userImageElement.src = usuario.images[1].url;
   }
 }
 
