@@ -1,4 +1,4 @@
-const endArtist = "https://api.spotify.com/v1/search?q=exitos+mexico&type=playlist&limit=1"
+const endArtist = "https://api.spotify.com/v1/search?q=top+50+mexico&type=playlist&limit=1"
 let ACCESS_TOKEN 
 const CLIENT_IDD = "5f49bb2bd6d24e96a3cbfdeffb9071f8";
 const CLIENT_SECRET = "b579f422e44f4b289ec5cecb40e1d208";
